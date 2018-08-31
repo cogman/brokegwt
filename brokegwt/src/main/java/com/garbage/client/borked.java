@@ -10,9 +10,9 @@ public class borked implements EntryPoint {
 
 	public void onModuleLoad() {
 		LOG.info(Optional.of("body")
-				.map(document::querySelector)
-				.map((v) -> v.innerHTML)
+				.map(Foo::foo)
+				.map((v) -> v.username)
 				.orElse(null));
-		LOG.info(document.querySelector("body").innerHTML);
+		LOG.info(Foo.foo("body").username);
 	}
 }
